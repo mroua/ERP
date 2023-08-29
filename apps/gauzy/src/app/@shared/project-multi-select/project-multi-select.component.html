@@ -1,0 +1,9 @@
+<label class="label" *ngIf="label">{{ label | translate }}</label>
+<ng-template>
+	<nb-select [formControl]="select" [multiple]="multiple" (selectedChange)="onMembersSelected($event)" fullWidth
+		[disabled]="disabled" [(selected)]="preSelected" placeholder="{{ placeholder | translate }}">
+		<nb-option *ngFor="let project of projects" [value]="project.id">
+			<ngx-avatar size="sm" [src]="project?.imageUrl" [name]="project?.name" [isOption]="true"></ngx-avatar>
+		</nb-option>
+	</nb-select>
+</ng-template>
